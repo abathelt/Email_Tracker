@@ -13,8 +13,6 @@ Echo "[Info] Search is limited to 7 days"
 $StartDate = Read-Host -Prompt 'Input the starting date MM/DD/YYYY'
 $EndDate = Read-Host -Prompt 'Input the ending date MM/DD/YYYY'
 
-#06/06/2021
-
 Get-MessageTrace -SenderAddress $Email -StartDate $StartDate –EndDate $EndDate | Export-Csv -Path "C:\temp\MessageTrack.csv”
 Get-MessageTrace -SenderAddress $Email -Status Delivered | Export-Csv -Path "C:\temp\MessageTrack_Delivered.csv”
 
